@@ -83,11 +83,8 @@ export class LoginComponent implements OnInit {
     console.log(ObjetoLogin);
     if (ObjetoLogin.id! == 0) {
       this.controlError(ObjetoLogin);
-      console.log("entro por error"+ObjetoLogin.id!);
-      //this.loadingPantalla.stopLoading();
     } else {
       this.saveData(ObjetoLogin);
-      console.log("entro por save");
     }
   }
 
@@ -103,7 +100,7 @@ export class LoginComponent implements OnInit {
           break;
       
         default:
-          this.toast.error('Ha ocurrido un error', 'Error');
+          this.toast.error('Error has occured', 'Error');
           break;
       }
     }

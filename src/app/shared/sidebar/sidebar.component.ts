@@ -1,6 +1,9 @@
+import { VariableBinding } from '@angular/compiler';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarService } from 'src/app/services/sidebar.service';
+
+declare var $:any;
 
 @Component({
   selector: 'app-sidebar',

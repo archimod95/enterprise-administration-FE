@@ -21,7 +21,7 @@ export class EnterprisesService {
   }
 
   getEnterpriseById(apiEnterpriseById:ApiEnterpriseById): Observable<Enterprise>{
-    return this.http.post<Enterprise>(this.apiUrl+"Enterprise/get-enterprise-by-ids", apiEnterpriseById);
+    return this.http.post<Enterprise>(this.apiUrl+"Enterprise/get-enterprise-by-id", apiEnterpriseById);
   }
 
   saveEnterprise(request:Enterprise): Observable<Apiresponse>{

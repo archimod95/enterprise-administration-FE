@@ -1,14 +1,13 @@
 export class Enterprise {
-    [x: string]: any;
-    Id?:number;
-    CreatedBy?:string
-    CreatedDate?:Date;
-    ModifiedBy?:string;
-    ModifiedDate?:Date;
-    Status?:boolean;
-    Address?:string
-    Name?:string;
-    Phone?:string;
+    id?:number;
+    created_By?:string
+    created_Date?:Date;
+    modified_By?:string;
+    modified_Date?:Date;
+    status?:boolean;
+    address?:string
+    name?:string;
+    phone?:string;
 }
 
 export class ApiEnterpriseById {

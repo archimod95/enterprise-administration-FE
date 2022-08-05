@@ -1,3 +1,3 @@
 export class Apiresponse {
-    Success?:boolean;
+    success?:boolean;
 }
