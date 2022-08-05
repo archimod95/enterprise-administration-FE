@@ -1,10 +1,10 @@
 export class Employee {
     id?:number;
-    createdBy?:string
-    createdDate?:Date;
-    modifiedBy?:string;
-    modifiedDate?:Date;
-    atatus?:boolean;
+    created_By?:string
+    created_Date?:Date;
+    modified_By?:string;
+    modified_Date?:Date;
+    status?:boolean;
     age?:string;
     email?:string;
     name?:string;

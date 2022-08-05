@@ -49,7 +49,6 @@ export class AdminEnterpriseComponent implements OnInit {
 
   requestEnterprise(){
     this.enterpriseSrv.getAllEnterprises().subscribe((rolesResp)=>{
-      console.log(rolesResp);  
       this.getAllEnterprises(rolesResp);
     })
   }

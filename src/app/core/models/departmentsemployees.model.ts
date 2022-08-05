@@ -8,3 +8,7 @@ export class Departmentsemployees {
     IdDepartment?:number;
     IdEmployee?:number;
 }
+
+export class ApiDepartmentsemployeesById {
+    Id?:number;
+}

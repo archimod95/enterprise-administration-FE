@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
       var apiEmployeeByEmail: ApiEmployeeByEmail;
       apiEmployeeByEmail = new ApiEmployeeByEmail();
       apiEmployeeByEmail.Email=this.loginForm.value.txt_email;
-      this.authService.getEmployeeByEamil(apiEmployeeByEmail).subscribe(
+      this.authService.getEmployeeByEmail(apiEmployeeByEmail).subscribe(
         (objeto) => {
           this.setUserLogin(objeto)
         },
