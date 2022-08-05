@@ -10,3 +10,7 @@ export class Department {
     Phone?:string;
     IdEnterprise?:string;
 }
+
+export class ApiDepartmentById {
+    Id?:number;
+}
