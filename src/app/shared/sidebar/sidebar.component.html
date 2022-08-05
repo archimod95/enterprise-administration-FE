@@ -24,22 +24,10 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item" *ngFor="let item of menuItems">
-            <a class="nav-link">
+            <a [routerLink]="item.url" class="nav-link" style="cursor: pointer;">
               <i class="{{item.icon}}"></i>
-              <p>
-                {{item.title}}
-                <span class = "badge badge-warning ml-2">{{item.submenu.length}}</span>
-                <i class="right fas fa-angle-left"></i>
-              </p>
+              <p class="ml-2">{{item.title}}</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item" *ngFor="let subMenu of item.submenu; let i =index">
-                <a [routerLink]="item.submenu[i].url" class="nav-link" style="cursor: pointer;">
-                  <i class="{{item.submenu[i].icon}}"></i>
-                  <p class="ml-2">{{item.submenu[i].title}}</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <li class="nav-item">

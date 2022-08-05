@@ -24,10 +24,10 @@ export class EmployeesService {
   }
 
   getEmployeeById(apiEnterpriseById:ApiEmployeeById): Observable<Employee>{
-    return this.http.post<Employee>(this.apiUrl+"Department/get-department-by-id", apiEnterpriseById);
+    return this.http.post<Employee>(this.apiUrl+"Employee/get-employees-by-id", apiEnterpriseById);
   }
 
   saveEmployee(request:Employee): Observable<Apiresponse>{
-    return this.http.post<Apiresponse>(this.apiUrl+"Department/save-departments-changes", request);
+    return this.http.post<Apiresponse>(this.apiUrl+"Employee/save-employee-changes", request);
   }
 }

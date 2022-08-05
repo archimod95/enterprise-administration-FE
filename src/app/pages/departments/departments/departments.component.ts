@@ -136,7 +136,7 @@ export class DepartmentsComponent implements OnInit {
   }
 
   saveParam() {
-    console.log(this.created_By);
+    console.log(this.adminDepartmentForm.valid);
     if (this.adminDepartmentForm.valid) {
       const request = new Department();
       request.id = this.departmentId! > 0? this.departmentId : 0;

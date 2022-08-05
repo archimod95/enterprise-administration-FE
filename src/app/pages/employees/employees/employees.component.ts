@@ -66,7 +66,7 @@ export class EmployeesComponent implements OnInit {
       txt_modifiedBy: [''],
       txt_modifiedDate: [''],
       cbx_status: [true, Validators.required ],
-      txt_age: ['', Validators.required ],
+      txt_age: ['int', Validators.required ],
       txt_email: ['', Validators.required ],
       txt_name: ['', Validators.required ],
       txt_position: ['', Validators.required ],
@@ -95,6 +95,7 @@ export class EmployeesComponent implements OnInit {
   }
 
   fillForm(params:Employee){
+      console.log(params);
       this.adminParamForm.setValue({
         txt_createdBy: params.created_By,
         txt_createdDate: params.created_Date,

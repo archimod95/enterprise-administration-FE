@@ -18,9 +18,9 @@ const routes:Routes = [
     {path:'enterprise', component:EnterpriseComponent, data:{title:'Enterprise'}},
     {path:'departments', component:DepartmentsComponent, data:{title:'Departments'}},
     {path:'employee', component:EmployeesComponent, data:{title:'Employee'}},
-    {path:'enterprise-administration', component:AdminEnterpriseComponent, data:{title:'Employee Administration'}},
-    {path:'departments-administration', component:AdminDepartmentsComponent, data:{title:'Employee'}},
-    {path:'employees-administration', component:AdminEmployeesComponent, data:{title:'Employee'}}
+    {path:'enterprise-administration', component:AdminEnterpriseComponent, data:{title:'Enterprise Administration'}},
+    {path:'departments-administration', component:AdminDepartmentsComponent, data:{title:'Departments Administration'}},
+    {path:'employees-administration', component:AdminEmployeesComponent, data:{title:'Employee Administration'}}
   ]
   }
   
