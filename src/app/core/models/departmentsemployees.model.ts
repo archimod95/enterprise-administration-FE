@@ -1,9 +1,9 @@
 export class Departmentsemployees {
     Id?:number;
-    CreatedBy?:string
-    CreatedDate?:Date;
-    ModifiedBy?:string;
-    ModifiedDate?:Date;
+    created_By?:string
+    created_Date?:Date;
+    modified_By?:string;
+    modified_Date?:Date;
     Status?:boolean;
     IdDepartment?:number;
     IdEmployee?:number;

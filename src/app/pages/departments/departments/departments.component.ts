@@ -35,14 +35,18 @@ export class DepartmentsComponent implements OnInit {
   lbl_description = 'Description';
   lbl_name = 'Name';
   lbl_phone = 'Phone';
+  lbl_idEnterprise='Enterprise'
 
   //Form
   adminDepartmentForm!:FormGroup
+  Enterprise?:Enterprise[];
+
   constructor(   
     private departmentSrv:DepartmentsService,
     private toast:ToastrService,
     private fb:FormBuilder,
-    private location: Location
+    private location: Location,
+    private enterpriseSrv:EnterprisesService
     ) {
       this.buildForm();
       const valEnterpriseId = sessionStorage.getItem('departmentId');
@@ -52,13 +56,17 @@ export class DepartmentsComponent implements OnInit {
       if(this.departmentId > 0){
         this.lblTitle = 'Edit';
         this.requestDepartment(this.departmentId);
-      }else{
+      }
+      else
+      {
         this.created_By =  valEmail !== null ? valEmail : "";
       }
+      this.requestEnterprise();
      }
 
   ngOnInit(): void {
   }
+
   buildForm() {
     this.adminDepartmentForm = this.fb.group({
       txt_createdBy: [''],
@@ -68,8 +76,27 @@ export class DepartmentsComponent implements OnInit {
       cbx_status: [true, Validators.required ],
       txt_description: ['', Validators.required ],
       txt_name: ['', Validators.required ],
-      txt_phone: ['', Validators.required ]
+      txt_phone: ['', Validators.required ],
+      cmb_idEnterprise:['',Validators.required]
     });
+  }
+
+  requestEnterprise(){
+    this.enterpriseSrv.getAllEnterprises().subscribe((rolesResp)=>{
+      this.getAllEnterprises(rolesResp);
+    })
+  }
+
+  getAllEnterprises(params:Enterprise[]){
+    if(params.length != null){
+      if(params.length > 0){
+        this.Enterprise = params;
+      }else{
+        this.toast.info('No aviable Info.','Information');
+      }
+    }else{
+      this.toast.error('There was an error trying to get the Information','Error');
+    }
   }
 
   requestDepartment(idEnterprise:number){
@@ -104,6 +131,7 @@ export class DepartmentsComponent implements OnInit {
         txt_name: params.name,
         txt_phone: params.phone,
         cbx_status: params.status,
+        cmb_idEnterprise: params.idEnterprise
       });
   }
 
